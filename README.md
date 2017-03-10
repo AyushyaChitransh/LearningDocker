@@ -11,3 +11,6 @@ Various html pages served by the server are shared by the host system, and host 
 Image 2: matplotlib
 It was designed to display a simple graph using matplotlib from python.
 Currently, the container is able to run python scripts but graph is not shown due to display devices not being initialized for container.
+
+Image 3: whalesay
+A tutorial image which clears concepts of docker. The image installs a package 'Fortunes' which emits random sayings. The command is executed when image is run. It enables a saying to be displayed in terminal.
