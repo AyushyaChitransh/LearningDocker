@@ -1,0 +1,53 @@
+#########################################################
+#			About Me			#
+#########################################################
+Name:
+Email:
+
+Background:
+Education:
+Programming Experience:
+Programming Strenghts:
+Work:
+=========================================================
+
+
+
+#########################################################
+#			Project Idea			#
+#########################################################
+Title:
+
+Steps:
+1) List out the components of reactome.
+2) Requirements/dependencies of each component.
+3) Installing components on local machine.
+4) Testing Installations.
+=========================================================
+
+
+#########################################################
+#			Week 1				#
+#########################################################
+Collect components of reactome
+Install each component on local machine
+Install tomcat apache
+Install Mysql
+Setup database
+Setup working directories with pages
+=========================================================
+
+
+#########################################################
+#			Week 2				#
+#########################################################
+Installing tomcat needs some research about customizations.
+Automation of installation procedure needs testing.
+Fresh installation may work correctly, but restarting
+failed installlation procedure may be tricky.
+=========================================================
+
+#########################################################
+#			Week 3				#
+#########################################################
+
