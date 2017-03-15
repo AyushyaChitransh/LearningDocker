@@ -1,5 +1,5 @@
-# GSoC Application for Stand-alone Reactome server in a Docker image
-The application describing idea of project and proposed timeline with possible hurdles. (In Progress)
+# GSoC Application 
+The application for Stand-alone Reactome server in a Docker image. It describes idea of project and proposed timeline with possible hurdles. (In Progress)
 
 # LearningDocker
 
