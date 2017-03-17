@@ -1,13 +1,16 @@
 #########################################################
 #			About Me			#
 #########################################################
-Name:
-Email:
+Name: Ayushya Chitransh
+Email: ayushyachitransh@gmail.com
 
-Background:
-Education:
-Programming Experience:
-Programming Strenghts:
+Background: Ayushya is a final year undergraduate pursuing
+his B.Tech in computer Science.
+
+Programming Experience: C is the chouce for all basic problems
+however C#, Java and Python are other languages of choice.
+
+Programming Strenghts: C is my favourite language
 Work:
 =========================================================
 
@@ -30,18 +33,19 @@ Steps:
 #		Week 1(May 30 to june 6)		#
 #########################################################
 Collect components of reactome
+Collectting Requirements for each component
 Install each component on local machine
-Install tomcat apache
-Install Mysql
-Setup database
-Setup working directories with pages
 =========================================================
 
 
 #########################################################
 #		Week 2 (June 7 to june 13)		#
 #########################################################
+Install tomcat apache
 Installing tomcat needs some research about customizations.
+Configuring tomcat for ubuntu 16.04
+Scripting the automation procedure
+
 Automation of installation procedure needs testing.
 Fresh installation may work correctly, but restarting
 failed installlation procedure may be tricky.
@@ -51,7 +55,12 @@ failed installlation procedure may be tricky.
 #########################################################
 #		Week 3 (June 14 to june 20)		#
 #########################################################
-Creating a docker using ubuntu 16.04 image.
+Looking up Directories to be included
+Setup working directories with pages
+
+Install Mysql
+Setup database
+
 Setting up directories for websites with database.
 =========================================================
 
@@ -59,52 +68,70 @@ Setting up directories for websites with database.
 #########################################################
 #		Week 4 (June 21 to june 27)		#
 #########################################################
+Scripting Automation Procedure for complete setup.
+Creating a docker using ubuntu 16.04 image.
 =========================================================
 
 
 #########################################################
 #		Week 5 (June 28 to july 4)		#
 #########################################################
+Deploying docker image to be available for downloaded.
+Optimizing dockerfile to run on slow networks also.
 =========================================================
 
 
 #########################################################
 #		Week 6 (july 5 to july 11)		#
 #########################################################
+Testing docker image.
+Installing and testing other api and services.
 =========================================================
 
 
 #########################################################
 #		Week 7 (july 12 to july 18)		#
 #########################################################
+Making entire setup accessible on single machine.
+Testing interdependency among different components.
 =========================================================
 
 
 #########################################################
 #		Week 8 (july 19 to july 25)		#
 #########################################################
+Seting up automatic updation of code from reactome github.
+Customizing updation process.
 =========================================================
 
 
 #########################################################
 #		Week 9 (july 26 to aug 1)		#
 #########################################################
+Allowing data shairing between users.
+Customizing to be able to access local database as well as
+online database.
 =========================================================
 
 
 #########################################################
 #		Week 10 (aug 2 to aug 8)		#
 #########################################################
+Debugging and testing for any errors or fails.
+Documentation of code for developers.
+Documentation for User.
 =========================================================
 
 
 #########################################################
 #		Week 10 (aug 9 to aug 15)		#
 #########################################################
+Review of functions from potential users.
+Debugging and updating documentation.
 =========================================================
 
 
 #########################################################
-#		Week 10 (aug 16 to aug 21)		#
+#		Week 11 (aug 16 to aug 21)		#
 #########################################################
 =========================================================
