@@ -1,24 +1,12 @@
-#########################################################
-#			About Me			#
-#########################################################
-Name: Ayushya Chitransh
-Email: ayushyachitransh@gmail.com
+# Project Idea			
 
-Background: Ayushya is a final year undergraduate pursuing
-his B.Tech in computer Science.
+Title: Stand-alone Reactome server in a Docker image
+    
+Introduction: Reactome is an online bioinformatics database of human biology described in molecular terms. It is an on-line encyclopedia of core human pathways. The goal of this project is to produce a Docker image that contains  everything that is needed for a user to run Reactome on their own workstation. Provisions will be made to update the database with the latest centralized database.
 
-Programming Experience: C is the chouce for all basic problems
-however C#, Java and Python are other languages of choice.
+Expected results: A Docker image that can be pulled from an image repository such as dockerhub or quay.io which contains the latest Reactome data and software, and can be run on any Docker-capable workstation. A process by which such docker images could be automatically built as a part of the Reactome data-release cycle would also be a goal. 
 
-Programming Strenghts: C is my favourite language
-Work:
-=========================================================
-
-
-#########################################################
-#			Project Idea			#
-#########################################################
-Title:
+Current Status: Currently there is no image. It has to be made from a base image as suitable for the project.
 
 Steps:
 1) List out the components of reactome.
@@ -26,21 +14,47 @@ Steps:
 3) Installing components on local machine.
 4) Testing Installations.
 5) Creating Docker.
+
+		Phase 1 (3 weeks)			
+
+Collect Dependencies for running reactome components.
+Install and test those components on local machine.
 =========================================================
 
 
-#########################################################
-#		Week 1(May 30 to june 6)		#
-#########################################################
+		Phase 2	(2 weeks)			
+
+Script installation procedure.
+Start creation of docker image by installing all components.
+=========================================================
+
+
+		Phase 3 (3 weeks)			
+
+Test the image by exeuting each component.
+=========================================================
+
+
+		Phase 4	(1 week)			
+
+Document docker image and provide user guide.
+=========================================================
+
+
+
+
+
+		Week 1(May 30 to june 6)		
+
 Collect components of reactome
 Collectting Requirements for each component
 Install each component on local machine
 =========================================================
 
 
-#########################################################
-#		Week 2 (June 7 to june 13)		#
-#########################################################
+
+		Week 2 (June 7 to june 13)		
+
 Install tomcat apache
 Installing tomcat needs some research about customizations.
 Configuring tomcat for ubuntu 16.04
@@ -52,9 +66,9 @@ failed installlation procedure may be tricky.
 =========================================================
 
 
-#########################################################
-#		Week 3 (June 14 to june 20)		#
-#########################################################
+
+		Week 3 (June 14 to june 20)		
+
 Looking up Directories to be included
 Setup working directories with pages
 
@@ -65,73 +79,90 @@ Setting up directories for websites with database.
 =========================================================
 
 
-#########################################################
-#		Week 4 (June 21 to june 27)		#
-#########################################################
+
+		Week 4 (June 21 to june 27)		
+
 Scripting Automation Procedure for complete setup.
 Creating a docker using ubuntu 16.04 image.
 =========================================================
 
 
-#########################################################
-#		Week 5 (June 28 to july 4)		#
-#########################################################
+
+		Week 5 (June 28 to july 4)		
+
 Deploying docker image to be available for downloaded.
 Optimizing dockerfile to run on slow networks also.
 =========================================================
 
 
-#########################################################
-#		Week 6 (july 5 to july 11)		#
-#########################################################
+
+		Week 6 (july 5 to july 11)		
+
 Testing docker image.
 Installing and testing other api and services.
 =========================================================
 
 
-#########################################################
-#		Week 7 (july 12 to july 18)		#
-#########################################################
+
+		Week 7 (july 12 to july 18)		
+
 Making entire setup accessible on single machine.
 Testing interdependency among different components.
 =========================================================
 
 
-#########################################################
-#		Week 8 (july 19 to july 25)		#
-#########################################################
+
+		Week 8 (july 19 to july 25)		
+
 Seting up automatic updation of code from reactome github.
 Customizing updation process.
 =========================================================
 
 
-#########################################################
-#		Week 9 (july 26 to aug 1)		#
-#########################################################
+
+		Week 9 (july 26 to aug 1)		
+
 Allowing data shairing between users.
 Customizing to be able to access local database as well as
 online database.
 =========================================================
 
 
-#########################################################
-#		Week 10 (aug 2 to aug 8)		#
-#########################################################
+
+		Week 10 (aug 2 to aug 8)		
+
 Debugging and testing for any errors or fails.
 Documentation of code for developers.
 Documentation for User.
 =========================================================
 
 
-#########################################################
-#		Week 10 (aug 9 to aug 15)		#
-#########################################################
+
+		Week 10 (aug 9 to aug 15)		
+
 Review of functions from potential users.
 Debugging and updating documentation.
 =========================================================
 
 
-#########################################################
-#		Week 11 (aug 16 to aug 21)		#
-#########################################################
+
+		Week 11 (aug 16 to aug 21)		
+
+=========================================================
+
+
+
+			About Me			
+
+Name: Ayushya Chitransh
+Email: ayushyachitransh@gmail.com
+
+Background: Ayushya is a final year undergraduate pursuing
+his B.Tech in computer Science.
+
+Programming Experience: C is the chouce for all basic problems
+however C, Java and Python are other languages of choice.
+
+Programming Strenghts: C is my favourite language
+Work:
 =========================================================
