@@ -14,15 +14,92 @@ Steps:
 3) Installing components on local machine.
 4) Testing Installations.
 5) Creating Docker.
+6) Making the image available on image repository such as dockerhub.
+7) Providing user guide to run different services on docker.
+***
 
-		Phase 1 (3 weeks)			
+Phase 1 (3 weeks)
+===
 
-Collect Dependencies for running reactome components.
-Install and test those components on local machine.
-=========================================================
+Collect components of reactome: Reactome has following components: a WordPress site, a MySQL database, and Java applications.
+
+Requirements: 
+solr service, MySQL
+perl \
+	curl \
+	cpanminus \
+	apache2 \
+	php5 \
+	php5-mysql \
+	openjdk-7-jre-headless \
+	openjdk-7-jdk\
+	libexpat1 \
+	libexpat1-dev \
+	libgd-gd2-perl \
+	libbio-perl-perl \
+	cpanm -q \	HTTP::Tiny \	IO::String \	LWP::UserAgent \	MIME::Lite \	Net::OpenSSH \	XML::Simple \	Search::Tools \	Capture::Tiny \	WWW::SearchResult \	JSON \	PDF::API2 \	Log::Log4perl \	common::sense \	Email::Valid \	URI::Encode
+	a2enmod \
+    mime \
+    include \
+    autoindex \
+    dir \
+    cgi \
+    alias \
+    proxy \
+    proxy_http \
+    rewrite
+    apache2 > 2.4
+	apache-tomcat-7.0.50
+	
+	
+    Components
+fireworks
+diagram
+Solr
+RESTful
 
 
-		Phase 2	(2 weeks)			
+WordPress Site
+---
+It requires a LAMP server which uses apache2 > 2.4 The server configuration files are already available but they need to be configured for specific system.
+    
+    Problem 1:
+    Current system does not support java provided by oracle. The bug was reported in tomcat7 which was corrected later in tomcat8. Tomcat apache configuration needs to be updated.
+php5 installation on local system failed due to the following reason
+```
+Package php5 is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+```
+php5-mysql installation failed in the same manner.
+The following packages were not installed because they had no installation candidate
+1. php5
+2. php5-mysql
+3. openjdk-7-jre-headless
+4. openjdk-7-jdk
+
+
+Collecting Requirements for each component.
+Install each component on local machine
+Install tomcat apache
+Installing tomcat needs some research about customizations.
+Configuring tomcat for ubuntu 16.04
+Scripting the automation procedure
+
+Automation of installation procedure needs testing.
+Fresh installation may work correctly, but restarting
+failed installlation procedure may be tricky.
+Looking up Directories to be included
+Setup working directories with pages
+
+Install Mysql
+Setup database
+
+Setting up directories for websites with database.
+
+
+Phase 2	(2 weeks)
+=========================================================			
 
 Script installation procedure.
 Start creation of docker image by installing all components.
@@ -38,17 +115,6 @@ Test the image by exeuting each component.
 		Phase 4	(1 week)			
 
 Document docker image and provide user guide.
-=========================================================
-
-
-
-
-
-		Week 1(May 30 to june 6)		
-
-Collect components of reactome
-Collectting Requirements for each component
-Install each component on local machine
 =========================================================
 
 
@@ -69,13 +135,7 @@ failed installlation procedure may be tricky.
 
 		Week 3 (June 14 to june 20)		
 
-Looking up Directories to be included
-Setup working directories with pages
 
-Install Mysql
-Setup database
-
-Setting up directories for websites with database.
 =========================================================
 
 
