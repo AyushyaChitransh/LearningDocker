@@ -1,14 +1,21 @@
 # Project Idea			
 
-Title: Stand-alone Reactome server in a Docker image
+##### Title:
+Stand-alone Reactome server in a Docker image
     
-Introduction: Reactome is an online bioinformatics database of human biology described in molecular terms. It is an on-line encyclopedia of core human pathways. The goal of this project is to produce a Docker image that contains  everything that is needed for a user to run Reactome on their own workstation. Provisions will be made to update the database with the latest centralized database.
+##### Introduction: 
+Reactome is an online bioinformatics database of human biology described in molecular terms. It is an on-line encyclopedia of core human pathways. The goal of this project is to produce a Docker image that contains  everything that is needed for a user to run Reactome on their own workstation. Provisions will be made to update the database with the latest centralized database.
 
-Expected results: A Docker image that can be pulled from an image repository such as dockerhub or quay.io which contains the latest Reactome data and software, and can be run on any Docker-capable workstation. A process by which such docker images could be automatically built as a part of the Reactome data-release cycle would also be a goal. 
 
-Current Status: Currently there is no image. It has to be made from a base image as suitable for the project.
 
-Steps:
+##### Expected results: 
+A Docker image that can be pulled from an image repository such as dockerhub or quay.io which contains the latest Reactome data and software, and can be run on any Docker-capable workstation. A process by which such docker images could be automatically built as a part of the Reactome data-release cycle would also be a goal. 
+
+##### Current Status:
+Currently there is no docker image. It has to be made from a base image as suitable for the project. A official image of LAMP stack is not available but we can start with an official docker image of tomcat which is based on `openjdk:7-jre-alpine`. This image is based on the popular Alpine Linux project,  Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general.
+The base image needs to be discussed. Previously all components of reactome were deployed on ubuntu. Thus using ubuntu image as the base image will be ideal for the project.
+
+##### Steps:
 1) List out the components of reactome.
 2) Requirements/dependencies of each component.
 3) Installing components on local machine.
@@ -20,10 +27,32 @@ Steps:
 
 Phase 1 (3 weeks)
 ===
+Collect information regarding components of reactome. 
 
-Collect components of reactome: Reactome has following components: a WordPress site, a MySQL database, and Java applications.
+### Components:
+1. Wordpress Website
+2. Pathway Browser
+3. Fireworks
+4. Diagram
+5. RESTful APIs
+6. Other Java Applications
 
-Requirements: 
+These components are to be discussed with the mentor. Alongwith the discussion regarding other java applications. Which are the other java applications that are to be included and when will their code be available.
+
+#### 1.  Wordpress Website
+It requires a LAMP stack. And presently the site is configured to run on apache2 > 2.4, using php5 and php5-mysql. Docker will require a fresh installation and when installed in an ubuntu image, all components will be easily installed using `RUN apt-get` in dockerfile. After installing all components of LAMP server, it can be configured by running the bash script. 
+#### Tasks
+1. Writing the Dockerfile for making image for LAMP server. 
+2. Writing the bash script to configure the server created in the image.
+
+These two will be primary tasks in this phase. The end product will be a container with a configured LAMP server. Official github repository of tomcat provides with two options, using a readymade tomcat image or using a dockerfile to create own image. I shall be using dockerfile since that allows freedom to  configure every aspect of server during creation.
+***
+
+Phase 2 (2 weeks)
+---
+Docker images are made layer by layer. Using the image made in previous layer, other components can be added on top of them. 
+Fireworks is a java application that provides overview of dataset analysis results in the context of the Reactome hierarchical pathway structure. Fireworks and FireworkJs, both require java for execution.
+
 solr service, MySQL
 perl \
 	curl \
@@ -50,13 +79,6 @@ perl \
     rewrite
     apache2 > 2.4
 	apache-tomcat-7.0.50
-	
-	
-    Components
-fireworks
-diagram
-Solr
-RESTful
 
 
 WordPress Site
@@ -77,7 +99,6 @@ The following packages were not installed because they had no installation candi
 2. php5-mysql
 3. openjdk-7-jre-headless
 4. openjdk-7-jdk
-
 
 Collecting Requirements for each component.
 Install each component on local machine
@@ -117,112 +138,3 @@ Test the image by exeuting each component.
 Document docker image and provide user guide.
 =========================================================
 
-
-
-		Week 2 (June 7 to june 13)		
-
-Install tomcat apache
-Installing tomcat needs some research about customizations.
-Configuring tomcat for ubuntu 16.04
-Scripting the automation procedure
-
-Automation of installation procedure needs testing.
-Fresh installation may work correctly, but restarting
-failed installlation procedure may be tricky.
-=========================================================
-
-
-
-		Week 3 (June 14 to june 20)		
-
-
-=========================================================
-
-
-
-		Week 4 (June 21 to june 27)		
-
-Scripting Automation Procedure for complete setup.
-Creating a docker using ubuntu 16.04 image.
-=========================================================
-
-
-
-		Week 5 (June 28 to july 4)		
-
-Deploying docker image to be available for downloaded.
-Optimizing dockerfile to run on slow networks also.
-=========================================================
-
-
-
-		Week 6 (july 5 to july 11)		
-
-Testing docker image.
-Installing and testing other api and services.
-=========================================================
-
-
-
-		Week 7 (july 12 to july 18)		
-
-Making entire setup accessible on single machine.
-Testing interdependency among different components.
-=========================================================
-
-
-
-		Week 8 (july 19 to july 25)		
-
-Seting up automatic updation of code from reactome github.
-Customizing updation process.
-=========================================================
-
-
-
-		Week 9 (july 26 to aug 1)		
-
-Allowing data shairing between users.
-Customizing to be able to access local database as well as
-online database.
-=========================================================
-
-
-
-		Week 10 (aug 2 to aug 8)		
-
-Debugging and testing for any errors or fails.
-Documentation of code for developers.
-Documentation for User.
-=========================================================
-
-
-
-		Week 10 (aug 9 to aug 15)		
-
-Review of functions from potential users.
-Debugging and updating documentation.
-=========================================================
-
-
-
-		Week 11 (aug 16 to aug 21)		
-
-=========================================================
-
-
-
-			About Me			
-
-Name: Ayushya Chitransh
-Email: ayushyachitransh@gmail.com
-
-Background: Ayushya is a final year undergraduate pursuing
-his B.Tech in computer Science.
-
-Programming Experience: C is the chouce for all basic problems
-however C, Java and Python are other languages of choice.
-
-Programming Strenghts: C is my favourite language
-Work:
-=========================================================
