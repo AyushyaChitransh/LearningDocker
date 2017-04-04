@@ -41,7 +41,7 @@ For the components discussed above there are some prerequisites and other servic
 
 ***
 
-## Phase 1 
+## Phase 1 (May 30 to June 26)
 
 There are two approaches of making a docker. Either use a dockerfile to make a single container or make multiple containers and combine then together using docker compose. Containers are ephemeral. To make sure data is preserved between runs, we can use volumes, which will be shared and persisted between containers. This is easily done with second approach ,i.e, using compose. Compose is a tool for defining and running multi-container Docker applications. It offers following [features](https://docs.docker.com/compose/overview/#features): 
 
@@ -80,25 +80,23 @@ Regarding the base image, we have two choices. Either going with traditional Deb
 
 These will be primary tasks in this phase. The end product will be a collection of containers configured as per required services.
 
-#### Tasks for phase 1 (May 30 to June 26)
+#### Tasks
 
 1.  Preparing independent and isolated containers for different services, by using a dockerfile or using a pre-existing official image of that service if available.
 2.  Preparing a base Image using dockerfile for the components whose official docker image is not available.
 3.  Writing the bash script to configure the services created for components in the image.
 4.  Compose a docker out of the containers of components.
 
-#### Details
-
-**Week 1 and 2**:  Prepare dockerfile and make environment for tomcat and apache2. Scripting the process of generation of self signed SSL certificate. It will need some research and thus will need more time. Certificate generation may require use of open source applications.
-
-**Week 3 and 4**: Prepare dockerfile for php and mysql. 
-
 ---
 ## Phase 2 (June 30 to July 24)
-Database: Reactome uses php5-mysql as RDBMS. There already exists a database which needs to be added and configured in the docker image. When docker will be created for the first time, a bash file will replicate the database in the volumes of docker image. The script will update the database in the image with master database on reactome server if newer database is available on the central server.
+**Database**: Reactome uses php5-mysql as RDBMS. There already exists a database which needs to be added and configured in the docker image. When docker will be created for the first time, a bash file will replicate the database in the volumes of docker image. The script will update the database in the image with master database on reactome server if newer database is available on the central server.
+
 **Neo4j**: Reactome uses neo4j. It is a graph database management system. Its official docker image for every version is available and desired version can be included in docker-compose. 
+
 **Perl**: Also one of the components in Reactome uses perl, so we will need to install perl. Official docker image of perl has its vulnerabilities. So we shall create our own image by installing only required modules. There are a number of perl modules required to be included and the necessary modules will be installed.
+
 **Solr**: Solr is an open source enterprise search platform, written in Java. To use Solr, we need to create a "core" using script at start time, as an index for Reactome data. Core can be created in several ways, and we shall be using Docker-compose to create a Solr container with the index stored in a named data volume.
+
 **Java**: Reactome contains two JAVA based components for visualization of dataset analysis which are Fireworks and Fireworks JS. Fireworks is a java application that provides hierarchical visualisation of dataset analysis results in the context of the Reactome pathway structure. Similarly Fireworks Js is an exporter of the diagram viewer to a Javascript API.
     The java applications will be made available in a single container by specifying their Jar files. Reactome has a component named Pathway analysis service (Analysis Tools) which provides an API for pathway over-representation and expression analysis as well as species comparison tool. 
 Reactome has other java applications such as: 
@@ -115,8 +113,8 @@ Reactome has other java applications such as:
 11. Pathway-Exchange 
 12. Models 2 Pathways
 
+### Tasks
 
-### Task
 1. Install and configure Neo4j, perl and Solr.
 2. Script installation procedure for php5-Mysq
 3. Replicate the Reactome’s live database to a local database. And provide
@@ -125,12 +123,14 @@ Reactome has other java applications such as:
 6. Adding all prerequisites and dependencies followed by the components.
 
 ---
+
 ## Phase 3 (August 15 to August 21)
 
 After making all components of Reactome available in the docker image, the installation procedure of those components needs to be tested. After successful testing image will be deployed on the standard image repository such as dockerhub or quay.io (as suggested by mentor) that can be pulled and run on any Docker-capable workstation. A user guide will also be added for easier Installation and operation of the Docker.
+
 **August 22 to August 29** : This week is set aside as a buffer to negate any time lost/lag in work.
 
-### Task
+### Tasks
 
 1. Formal Testing.
 2. Deploy the image to be available for download.
@@ -140,16 +140,20 @@ After making all components of Reactome available in the docker image, the insta
 
 ### Personal information
 
-**Name**: Ayushya Chitransh 
+**Name**: Ayushya Chitransh
+
 **Email**: ayushyachitransh@gmail.com 
+
 **Github**: ayushyachitransh 
 
 **Background**: I am a final year undergraduate pursuing B.Tech in Computer Science and Engineering. I don't have any commitments this summer and I will be able to dedicate most of my time to my project.
 
 #### Programming interests and strengths
+
 **What are your languages of choice?**
 I have been programming for quite a long time, and it was in last 3 years that I was introduced to the open source world. During these three years while pursuing my bachelor’s degree in computer science, I have worked on a diverse variety of projects, which includes:
 **Two desktop applications** for conducting a two day technical quiz in the college:
+
 1. [RiseOfUltron](https://github.com/AyushyaChitransh/Medicrum)
 2. [Rise Of Ultron- Finale](https://github.com/AyushyaChitransh/Technical-Quiz-2)
  
@@ -158,7 +162,6 @@ I have been programming for quite a long time, and it was in last 3 years that I
 2. [Medicrum](https://github.com/AyushyaChitransh/Medicrum): An online platform for bringing together retailers, buyers and suppliers of medicines.
 
 My final year project, [Abstractive Text Summarization](https://github.com/AnupKumarGupta/AbstractiveTextSummarizer), is to provide a summary of a larger piece of text, implemented using abstractive summarization technique. All of the projects mentioned above are available on  Github.
-
 
 #### Any prior experience with open source development?
 
@@ -173,4 +176,3 @@ I have no exposure to bioinformatics and limited knowledge about biology. But th
 
 #### What can you bring to the team?
 Having done an internship in industrial environment and being a part of technical community in our college, I bring along a sense of teamwork, coordination, ability to work under pressures and deadlines. 
-
